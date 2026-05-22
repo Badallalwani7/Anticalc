@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy — Anticalc</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0d0d0d;
+      --surface: #141414;
+      --border: #222;
+      --accent: #c8f55a;
+      --accent-dim: rgba(200,245,90,0.12);
+      --text: #e8e8e0;
+      --muted: #6b6b60;
+      --white: #f5f5ee;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Mono', monospace;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 1.8;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13,13,13,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      color: var(--white);
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .badge {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 5px 12px;
+      border-radius: 2px;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 80px 40px 60px;
+      max-width: 860px;
+      margin: 0 auto;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+
+    .hero::before {
+      content: 'PRIVACY';
+      position: absolute;
+      top: 60px;
+      right: 40px;
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(60px, 10vw, 110px);
+      color: rgba(200,245,90,0.04);
+      pointer-events: none;
+      white-space: nowrap;
+      line-height: 1;
+    }
+
+    .eyebrow {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(36px, 6vw, 64px);
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 24px;
+      letter-spacing: -1px;
+    }
+
+    .updated {
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    /* Main layout */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 60px 40px 100px;
+      display: grid;
+      gap: 0;
+    }
+
+    /* Section */
+    .section {
+      padding: 40px 0;
+      border-bottom: 1px solid var(--border);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.5s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section:nth-child(1) { animation-delay: 0.1s; }
+    .section:nth-child(2) { animation-delay: 0.18s; }
+    .section:nth-child(3) { animation-delay: 0.26s; }
+    .section:nth-child(4) { animation-delay: 0.34s; }
+    .section:nth-child(5) { animation-delay: 0.42s; }
+    .section:nth-child(6) { animation-delay: 0.50s; }
+    .section:nth-child(7) { animation-delay: 0.58s; }
+    .section:nth-child(8) { animation-delay: 0.66s; }
+    .section:nth-child(9) { animation-delay: 0.74s; }
+
+    .section-number {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+      font-weight: 500;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 26px;
+      color: var(--white);
+      margin-bottom: 20px;
+      font-weight: 400;
+      letter-spacing: -0.3px;
+    }
+
+    h3 {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 28px 0 12px;
+      font-weight: 500;
+    }
+
+    p {
+      color: var(--text);
+      margin-bottom: 16px;
+      max-width: 680px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    /* Data card */
+    .data-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      padding: 20px 24px;
+      margin: 20px 0;
+      border-radius: 2px;
+    }
+
+    .data-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .data-card ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: var(--text);
+    }
+
+    .data-card ul li::before {
+      content: '→';
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* Third party links */
+    .third-party-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .third-party-list li a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 13px;
+      transition: opacity 0.2s;
+    }
+
+    .third-party-list li a::before {
+      content: '↗';
+      font-size: 12px;
+    }
+
+    .third-party-list li a:hover {
+      opacity: 0.7;
+    }
+
+    /* Use cases grid */
+    .use-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .use-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 16px 18px;
+      border-radius: 2px;
+      transition: border-color 0.2s;
+    }
+
+    .use-item:hover {
+      border-color: var(--accent);
+    }
+
+    .use-item-label {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .use-item p {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* Contact block */
+    .contact-block {
+      background: var(--accent-dim);
+      border: 1px solid rgba(200,245,90,0.2);
+      padding: 28px 32px;
+      border-radius: 4px;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .contact-block p {
+      margin: 0;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #0d0d0d;
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      padding: 10px 20px;
+      border-radius: 2px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: opacity 0.2s;
+    }
+
+    .contact-link:hover {
+      opacity: 0.85;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 40px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    footer span {
+      color: var(--accent);
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      header { padding: 16px 20px; }
+      .hero { padding: 50px 20px 40px; }
+      .hero::before { display: none; }
+      main { padding: 40px 20px 60px; }
+      .use-grid { grid-template-columns: 1fr; }
+      footer { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Anti<span>calc</span></div>
+    <div class="badge">Privacy Policy</div>
+  </header>
+
+  <div class="hero">
+    <div class="eyebrow">Legal Document</div>
+    <h1>Your Privacy,<br/>Our Responsibility</h1>
+    <p class="updated">Last updated — May 23, 2026</p>
+  </div>
+
+  <main>
+
+    <!-- Definitions -->
+    <div class="section">
+      <div class="section-number">01 — Definitions</div>
+      <h2>Interpretation &amp; Definitions</h2>
+      <p>This Privacy Policy describes our policies and procedures on the collection, use and disclosure of your information when you use the Service and tells you about your privacy rights and how the law protects you.</p>
+      <h3>Key Terms</h3>
+      <div class="data-card">
+        <ul>
+          <li><strong>Account</strong> — A unique account created for you to access our Service.</li>
+          <li><strong>Application</strong> — The software program named <em>Anticalc</em>, downloaded on any electronic device.</li>
+          <li><strong>Company</strong> — Refers to Anticalc ("We", "Us", "Our").</li>
+          <li><strong>Service</strong> — Refers to the Application.</li>
+          <li><strong>You</strong> — The individual or entity accessing or using the Service.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Data collected -->
+    <div class="section">
+      <div class="section-number">02 — Data Collection</div>
+      <h2>Types of Data Collected</h2>
+
+      <h3>Personal Data</h3>
+      <p>While using our Service, we may ask you to provide personally identifiable information. This may include:</p>
+      <div class="data-card">
+        <ul>
+          <li>Usage Data</li>
+        </ul>
+      </div>
+
+      <h3>Usage Data</h3>
+      <p>Usage Data is collected automatically when using the Service. This may include information such as your device's IP address, browser type and version, pages visited, time and date of visits, time spent on pages, unique device identifiers, and other diagnostic data.</p>
+      <p>When you access the Service on a mobile device, we may also collect the type of mobile device, your mobile device unique ID, mobile OS, mobile browser type, and additional diagnostic data.</p>
+    </div>
+
+    <!-- Third party -->
+    <div class="section">
+      <div class="section-number">03 — Third Parties</div>
+      <h2>Third-Party Services</h2>
+      <p>The Application uses third-party services that may collect information used to identify you. Please review their privacy policies:</p>
+      <ul class="third-party-list">
+        <li><a href="https://www.google.com/policies/privacy/" target="_blank" rel="noopener">Google Play Services</a></li>
+        <li><a href="https://firebase.google.com/policies/analytics" target="_blank" rel="noopener">Firebase Analytics</a></li>
+        <li><a href="https://firebase.google.com/support/privacy/" target="_blank" rel="noopener">Firebase Crashlytics</a></li>
+      </ul>
+    </div>
+
+    <!-- Use of data -->
+    <div class="section">
+      <div class="section-number">04 — Data Usage</div>
+      <h2>Use of Your Personal Data</h2>
+      <p>The Company may use Personal Data for the following purposes:</p>
+      <div class="use-grid">
+        <div class="use-item">
+          <div class="use-item-label">Service Maintenance</div>
+          <p>To provide and maintain the Service, including monitoring usage.</p>
+        </div>
+        <div class="use-item">
+          <div class="use-item-label">Account Management</div>
+          <p>To manage your registration as a user of the Service.</p>
+        </div>
+        <div class="use-item">
+          <div class="use-item-label">Communications</div>
+          <p>To contact you about updates and informative communications via email or equivalent channels.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Retention -->
+    <div class="section">
+      <div class="section-number">05 — Retention</div>
+      <h2>Retention of Your Personal Data</h2>
+      <p>The Company will retain your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your Personal Data to the extent required to comply with our legal obligations, resolve disputes, and enforce our legal agreements and policies.</p>
+    </div>
+
+    <!-- Disclosure -->
+    <div class="section">
+      <div class="section-number">06 — Disclosure</div>
+      <h2>Disclosure of Your Personal Data</h2>
+      <p>Under certain circumstances, the Company may be required to disclose your Personal Data if required to do so by law or in response to valid requests by public authorities, such as a court or a government agency.</p>
+    </div>
+
+    <!-- Security -->
+    <div class="section">
+      <div class="section-number">07 — Security</div>
+      <h2>Security of Your Personal Data</h2>
+      <p>The security of your Personal Data is important to us. However, no method of transmission over the Internet, or method of electronic storage, is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.</p>
+    </div>
+
+    <!-- Children -->
+    <div class="section">
+      <div class="section-number">08 — Children</div>
+      <h2>Children's Privacy</h2>
+      <p>Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If you are a parent or guardian and are aware that your child has provided us with Personal Data, please contact us immediately.</p>
+    </div>
+
+    <!-- Changes -->
+    <div class="section">
+      <div class="section-number">09 — Updates</div>
+      <h2>Changes to this Privacy Policy</h2>
+      <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes.</p>
+    </div>
+
+    <!-- Contact -->
+    <div class="section" style="border-bottom: none;">
+      <div class="section-number">10 — Contact</div>
+      <h2>Contact Us</h2>
+      <p>If you have any questions about this Privacy Policy, reach out to us directly.</p>
+      <div class="contact-block">
+        <p>We're available for any privacy-related queries or data requests.</p>
+        <a class="contact-link" href="mailto:badallalwani9@gmail.com">↗ badallalwani9@gmail.com</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2026 <span>Anticalc</span> &nbsp;·&nbsp; All rights reserved
+  </footer>
+
+</body>
+</html>
